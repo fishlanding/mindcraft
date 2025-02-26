@@ -20,6 +20,7 @@ import { Qwen } from "./qwen.js";
 import { Grok } from "./grok.js";
 import { DeepSeek } from './deepseek.js';
 import { OpenRouter } from './openrouter.js';
+import { NewApi } from './newapi.js'
 
 export class Prompter {
     constructor(agent, fp) {
@@ -95,6 +96,8 @@ export class Prompter {
                 this.embedding_model = new HuggingFace(embedding.model, embedding.url);
             else if (embedding.api === 'novita')
                 this.embedding_model = new Novita(embedding.model, embedding.url);
+            else if (embedding.api === 'newapi')
+                this.embedding_model = new NewApi(embedding.model, embedding.url);
             else {
                 this.embedding_model = null;
                 let embedding_name = embedding ? embedding.api : '[NOT SPECIFIED]'
@@ -147,6 +150,8 @@ export class Prompter {
                 profile.api = 'deepseek';
             else if (profile.model.includes('llama3'))
                 profile.api = 'ollama';
+            else if (profile.model.includes('newapi'))
+                profile.api = 'newapi';
             else 
                 throw new Error('Unknown model:', profile.model);
         }
@@ -179,6 +184,8 @@ export class Prompter {
             model = new Grok(profile.model, profile.url, profile.params);
         else if (profile.api === 'deepseek')
             model = new DeepSeek(profile.model, profile.url, profile.params);
+        else if (profile.api === 'newapi')
+            model = new NewApi(profile.model, profile.url, profile.params);
         else if (profile.api === 'openrouter')
             model = new OpenRouter(profile.model.replace('openrouter/', ''), profile.url, profile.params);
         else

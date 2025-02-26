@@ -1,0 +1,22 @@
+{
+    "name": "newapi",
+    "model": {
+        "api": "newapi",
+        "model": "gpt-4o-mini",
+        "url": "https://api.yuwan886.top/v1",
+        "params": {
+            "max_tokens": 1000,
+            "temperature": 1
+        }
+    },
+    "code_model": {
+        "api": "newapi",
+        "model": "gpt-4o-mini",
+        "url": "https://api.yuwan886.top/v1"
+    },
+    "embedding": {
+        "api": "newapi",
+        "model": "text-embedding-ada-002",
+        "url": "https://api.yuwan886.top/v1"
+    }
+}
