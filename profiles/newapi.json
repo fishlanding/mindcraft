@@ -2,7 +2,7 @@
     "name": "newapi",
     "model": {
         "api": "newapi",
-        "model": "gpt-4o-mini",
+        "model": "dify",
         "url": "https://api.yuwan886.top/v1",
         "params": {
             "max_tokens": 1000,
@@ -11,12 +11,7 @@
     },
     "code_model": {
         "api": "newapi",
-        "model": "gpt-4o-mini",
-        "url": "https://api.yuwan886.top/v1"
-    },
-    "embedding": {
-        "api": "newapi",
-        "model": "text-embedding-ada-002",
+        "model": "dify",
         "url": "https://api.yuwan886.top/v1"
     }
 }
